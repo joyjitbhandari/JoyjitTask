@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:background="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
+    <!--Body-->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:text="OVERALL SCORE"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/_16sp" />
+
+            <!--Score card-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardElevation="@dimen/_2dp"
+                app:strokeWidth="@dimen/_0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_30dp"
+                    android:paddingHorizontal="@dimen/_15dp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideLine"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_score"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Overall Score"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/guideLine"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicator"
+                        style="@style/Widget.Material3.CircularProgressIndicator.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:progress="50"
+                        app:indicatorColor="@color/yellow"
+                        app:indicatorSize="100dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:trackColor="@color/grey"
+                        app:trackThickness="8dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_score_percentage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10dp"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/_15dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/circularProgressIndicator"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/circularProgressIndicator"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_search_volume"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:text="Search Volume"
+                        android:textSize="@dimen/_16sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideLine"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/circularProgressIndicator" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_competition"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:text="Competition"
+                        android:textSize="@dimen/_16sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideLine"
+                        app:layout_constraintTop_toBottomOf="@+id/circularProgressIndicator" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:text="TITLE"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/_16sp" />
+
+            <!--Title card-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardElevation="@dimen/_2dp"
+                app:strokeWidth="@dimen/_0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_30dp"
+                    android:paddingHorizontal="@dimen/_15dp"
+                    android:layout_marginBottom="@dimen/_5dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_title_generated"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="This is title generated"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_generated">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_title_copy"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_weight="1"
+                            android:text="Copy"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/_18sp" />
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_color_grey" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_title_share"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_weight="1"
+                            android:text="Share"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/_18sp" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:text="DESCRIPTION"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/_16sp" />
+
+            <!--Description card-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardElevation="@dimen/_2dp"
+                app:strokeWidth="@dimen/_0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_30dp"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:paddingHorizontal="@dimen/_15dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_desc"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="This is title generated"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_desc">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_desc_copy"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_weight="1"
+                            android:text="Copy"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/_18sp" />
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_color_grey" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_desc_share"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_weight="1"
+                            android:text="Share"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/_18sp" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

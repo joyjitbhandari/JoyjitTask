@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.JoyjitTask" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="android:colorSecondary">@color/red</item>
+        <item name="android:statusBarColor">@color/dark_red</item>
+    </style>
+
+    <style name="Theme.JoyjitTask" parent="Base.Theme.JoyjitTask" />
+</resources>
